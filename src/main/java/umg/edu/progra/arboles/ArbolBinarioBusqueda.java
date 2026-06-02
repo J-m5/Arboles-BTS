@@ -195,7 +195,25 @@ public class ArbolBinarioBusqueda {
         }
         return contarHojasRecursivo(nodo.izquierdo) + contarHojasRecursivo(nodo.derecho);
     }
+    
+    
+    /**
+     * Cuenta todos los nodos del árbol usando recursividad.
+     * No utiliza el atributo tamanio.
+     */
+    public int contarNodos() {
+        return contarNodosRecursivo(raiz);
+    }
 
+    private int contarNodosRecursivo(Nodo nodo) {
+        if (nodo == null) {
+            return 0;
+        }
+
+        return 1
+                + contarNodosRecursivo(nodo.izquierdo)
+                + contarNodosRecursivo(nodo.derecho);
+    }
     // ============================================================
     // RECORRIDOS DEL ARBOL
     // ============================================================

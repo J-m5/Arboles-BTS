@@ -38,6 +38,7 @@ public class Principal {
         System.out.println("Minimo:  " + arbol.minimo());
         System.out.println("Maximo:  " + arbol.maximo());
         System.out.println("Hojas:   " + arbol.contarHojas());
+        System.out.println("Total nodos: " + arbol.contarNodos());
 
         System.out.println("\n--- Representacion visual (rotada 90 grados) ---");
         arbol.imprimirArbol();
