@@ -213,7 +213,34 @@ public class ArbolBinarioBusqueda {
     public boolean esBalanceado() {
         return esBalanceadoRecursivo(raiz);
     }
+    
+    /**
+     * Verifica que el árbol cumpla la propiedad de BST.
+     */
+    public boolean esBSTValido() {
+        return esBSTValidoRecursivo(raiz, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
 
+    private boolean esBSTValidoRecursivo(Nodo nodo, int minimo, int maximo) {
+
+        if (nodo == null) {
+            return true;
+        }
+
+        if (nodo.dato <= minimo || nodo.dato >= maximo) {
+            return false;
+        }
+
+        return esBSTValidoRecursivo(
+                nodo.izquierdo,
+                minimo,
+                nodo.dato)
+                &&
+                esBSTValidoRecursivo(
+                        nodo.derecho,
+                        nodo.dato,
+                        maximo);
+    }
     private boolean esBalanceadoRecursivo(Nodo nodo) {
         if (nodo == null) {
             return true;

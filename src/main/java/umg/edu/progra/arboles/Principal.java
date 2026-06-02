@@ -40,6 +40,7 @@ public class Principal {
         System.out.println("Hojas:   " + arbol.contarHojas());
         System.out.println("Total nodos: " + arbol.contarNodos());
         System.out.println("Balanceado: " + arbol.esBalanceado());
+        System.out.println("BST valido: " + arbol.esBSTValido());
 
         System.out.println("\n--- Representacion visual (rotada 90 grados) ---");
         arbol.imprimirArbol();
