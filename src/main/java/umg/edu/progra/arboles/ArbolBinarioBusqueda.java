@@ -204,7 +204,38 @@ public class ArbolBinarioBusqueda {
     public int contarNodos() {
         return contarNodosRecursivo(raiz);
     }
+    
+    /**
+     * Verifica si el árbol está balanceado.
+     * Un árbol está balanceado si la diferencia entre las alturas
+     * de los subárboles izquierdo y derecho de cada nodo no supera 1.
+     */
+    public boolean esBalanceado() {
+        return esBalanceadoRecursivo(raiz);
+    }
 
+    private boolean esBalanceadoRecursivo(Nodo nodo) {
+        if (nodo == null) {
+            return true;
+        }
+
+        int alturaIzquierda = alturaRecursiva(nodo.izquierdo);
+        int alturaDerecha = alturaRecursiva(nodo.derecho);
+
+        int diferencia = alturaIzquierda - alturaDerecha;
+
+        if (diferencia < 0) {
+            diferencia = -diferencia;
+        }
+
+        if (diferencia > 1) {
+            return false;
+        }
+
+        return esBalanceadoRecursivo(nodo.izquierdo)
+                && esBalanceadoRecursivo(nodo.derecho);
+    }
+    
     private int contarNodosRecursivo(Nodo nodo) {
         if (nodo == null) {
             return 0;
