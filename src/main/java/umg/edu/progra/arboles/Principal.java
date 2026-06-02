@@ -50,7 +50,17 @@ public class Principal {
 
         System.out.println("LCA(10,80): " +
                 arbol.ancestroComunMasBajo(10,80));
+        
+        System.out.println("\n--- Arbol original ---");
+        arbol.imprimirArbol();
 
+        arbol.invertir();
+
+        System.out.println("\n--- Arbol invertido ---");
+        arbol.imprimirArbol();
+        
+        arbol.invertir();
+        
         System.out.println("\n--- Representacion visual (rotada 90 grados) ---");
         arbol.imprimirArbol();
 

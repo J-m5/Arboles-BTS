@@ -241,10 +241,31 @@ public class ArbolBinarioBusqueda {
                 return actual.dato;
             }
         }
-
         throw new IllegalArgumentException(
                 "No existe ancestro comun");
     }
+    
+    /**
+     * Invierte el árbol (efecto espejo).
+     */
+    public void invertir() {
+        invertirRecursivo(raiz);
+    }
+
+    private void invertirRecursivo(Nodo nodo) {
+
+        if (nodo == null) {
+            return;
+        }
+
+        Nodo temporal = nodo.izquierdo;
+        nodo.izquierdo = nodo.derecho;
+        nodo.derecho = temporal;
+
+        invertirRecursivo(nodo.izquierdo);
+        invertirRecursivo(nodo.derecho);
+    }
+    
     private boolean esBSTValidoRecursivo(Nodo nodo, int minimo, int maximo) {
 
         if (nodo == null) {
