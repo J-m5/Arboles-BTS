@@ -220,7 +220,31 @@ public class ArbolBinarioBusqueda {
     public boolean esBSTValido() {
         return esBSTValidoRecursivo(raiz, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
+    
+    /**
+     * Encuentra el ancestro común más bajo (LCA)
+     * entre dos valores del BST.
+     */
+    public int ancestroComunMasBajo(int a, int b) {
 
+        Nodo actual = raiz;
+
+        while (actual != null) {
+
+            if (a < actual.dato && b < actual.dato) {
+                actual = actual.izquierdo;
+            }
+            else if (a > actual.dato && b > actual.dato) {
+                actual = actual.derecho;
+            }
+            else {
+                return actual.dato;
+            }
+        }
+
+        throw new IllegalArgumentException(
+                "No existe ancestro comun");
+    }
     private boolean esBSTValidoRecursivo(Nodo nodo, int minimo, int maximo) {
 
         if (nodo == null) {

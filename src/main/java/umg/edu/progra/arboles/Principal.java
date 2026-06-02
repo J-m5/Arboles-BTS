@@ -41,6 +41,15 @@ public class Principal {
         System.out.println("Total nodos: " + arbol.contarNodos());
         System.out.println("Balanceado: " + arbol.esBalanceado());
         System.out.println("BST valido: " + arbol.esBSTValido());
+        
+        System.out.println("LCA(20,40): " +
+                arbol.ancestroComunMasBajo(20,40));
+
+        System.out.println("LCA(60,80): " +
+                arbol.ancestroComunMasBajo(60,80));
+
+        System.out.println("LCA(10,80): " +
+                arbol.ancestroComunMasBajo(10,80));
 
         System.out.println("\n--- Representacion visual (rotada 90 grados) ---");
         arbol.imprimirArbol();
