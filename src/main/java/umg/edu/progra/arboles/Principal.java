@@ -27,9 +27,17 @@ public class Principal {
          *         /
          *        10
          */
-        int[] valores = { 50, 30, 70, 20, 40, 60, 80, 10 };
-        for (int v : valores) {
-            arbol.insertar(v);
+        if (args.length > 0) {
+            System.out.println("Construyendo árbol desde argumentos...");
+            for (int i = 0; i < args.length; i++) {
+                arbol.insertar(Integer.parseInt(args[i]));
+            }
+        } else {
+            System.out.println("Construyendo árbol con valores por defecto...");
+            int[] valores = { 50, 30, 70, 20, 40, 60, 80, 10 };
+            for (int v : valores) {
+                arbol.insertar(v);
+            }
         }
 
         System.out.println("===== Arbol Binario de Busqueda =====");
