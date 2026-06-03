@@ -208,3 +208,207 @@ Solo cuentan si los 5 problemas anteriores están correctos.
 ---
 
 > "Un BST bien implementado es más rápido que muchas estructuras prediseñadas… si entienden el porqué."
+
+
+# Ejercicios Implementados
+
+## Problema 1 - contarNodos()
+
+Cuenta la cantidad total de nodos del árbol utilizando recursividad sin utilizar el atributo `tamanio`.
+
+### Ejemplo
+
+**Entrada**
+
+Árbol con los valores:
+
+```text
+50, 30, 70, 20, 40, 60, 80, 10
+```
+
+**Salida**
+
+```text
+Total nodos: 8
+```
+
+---
+
+## Problema 2 - esBalanceado()
+
+Verifica si el árbol se encuentra balanceado. Un árbol se considera balanceado cuando la diferencia entre las alturas de los subárboles izquierdo y derecho de cada nodo no supera una unidad.
+
+### Ejemplo
+
+**Salida**
+
+```text
+Balanceado: true
+```
+
+---
+
+## Problema 3 - esBSTValido()
+
+Comprueba que el árbol cumple la propiedad de Árbol Binario de Búsqueda (BST), donde todos los nodos del subárbol izquierdo son menores que la raíz y todos los nodos del subárbol derecho son mayores.
+
+### Ejemplo
+
+**Salida**
+
+```text
+BST valido: true
+```
+
+---
+
+## Problema 4 - ancestroComunMasBajo()
+
+Determina el ancestro común más bajo (LCA) entre dos nodos del árbol.
+
+### Ejemplos
+
+```text
+LCA(20,40): 30
+LCA(60,80): 70
+LCA(10,80): 50
+```
+
+---
+
+## Problema 5 - invertir()
+
+Invierte el árbol intercambiando recursivamente los hijos izquierdo y derecho de cada nodo, generando un árbol espejo.
+
+### Ejemplo
+
+Se muestra la representación visual del árbol original y posteriormente del árbol invertido.
+
+```text
+--- Arbol original ---
+          -> 80
+     -> 70
+          -> 60
+-> 50
+          -> 40
+     -> 30
+          -> 20
+               -> 10
+
+--- Arbol invertido ---
+               -> 10
+          -> 20
+     -> 30
+          -> 40
+-> 50
+          -> 60
+     -> 70
+          -> 80
+```
+
+---
+
+# Ejercicios Extra
+
+## E1 - kEsimoMenor(int k)
+
+Obtiene el k-ésimo elemento menor del árbol utilizando un recorrido InOrden.
+
+### Ejemplos
+
+```text
+K-esimo menor k=1: 10
+K-esimo menor k=3: 30
+K-esimo menor k=5: 50
+```
+
+---
+
+## E2 - imprimirRangoOrdenado(int min, int max)
+
+Imprime los valores comprendidos dentro de un rango dado en orden ascendente.
+
+### Ejemplos
+
+```text
+Rango ordenado [25,65]: 30 40 50 60
+Rango ordenado [10,40]: 10 20 30 40
+```
+
+---
+
+## E3 - diametro()
+
+Calcula el diámetro del árbol, definido como la longitud del camino más largo entre dos nodos.
+
+### Ejemplo
+
+```text
+Diametro: 5
+```
+
+---
+
+## E4 - Construcción desde argumentos
+
+Permite construir el árbol a partir de valores enviados mediante argumentos en la línea de comandos.
+
+### Ejemplo de ejecución
+
+```bash
+mvn exec:java -Dexec.mainClass="umg.edu.progra.arboles.Principal" -Dexec.args="50 30 70 20 40 60 80 10"
+```
+
+### Salida
+
+```text
+Construyendo árbol desde argumentos...
+```
+
+---
+
+# Compilación y Ejecución
+
+## Compilar
+
+```bash
+mvn clean
+mvn compile
+```
+
+## Ejecutar con valores por defecto
+
+```bash
+mvn exec:java -Dexec.mainClass="umg.edu.progra.arboles.Principal"
+```
+
+## Ejecutar con argumentos
+
+```bash
+mvn exec:java -Dexec.mainClass="umg.edu.progra.arboles.Principal" -Dexec.args="50 30 70 20 40 60 80 10"
+```
+
+---
+
+# Evidencias
+
+Las capturas de ejecución y validación se encuentran en la carpeta:
+
+```text
+evidencias/
+```
+
+Las evidencias incluyen:
+
+* Problema 1: contarNodos()
+* Problema 2: esBalanceado()
+* Problema 3: esBSTValido()
+* Problema 4: ancestroComunMasBajo()
+* Problema 5: invertir()
+* Extra E1: kEsimoMenor()
+* Extra E2: imprimirRangoOrdenado()
+* Extra E3: diametro()
+* Extra E4: construcción desde argumentos
+* Compilación exitosa con Maven
+
+  
