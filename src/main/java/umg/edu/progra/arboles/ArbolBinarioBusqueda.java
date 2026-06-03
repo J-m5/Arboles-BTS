@@ -304,6 +304,32 @@ public class ArbolBinarioBusqueda {
     private static class Contador {
         int valor;
     }
+    
+    /**
+     * Imprime en orden ascendente los valores dentro del rango indicado.
+     */
+    public void imprimirRangoOrdenado(int min, int max) {
+        imprimirRangoOrdenadoRecursivo(raiz, min, max);
+        System.out.println();
+    }
+
+    private void imprimirRangoOrdenadoRecursivo(Nodo nodo, int min, int max) {
+        if (nodo == null) {
+            return;
+        }
+
+        if (nodo.dato > min) {
+            imprimirRangoOrdenadoRecursivo(nodo.izquierdo, min, max);
+        }
+
+        if (nodo.dato >= min && nodo.dato <= max) {
+            System.out.print(nodo.dato + " ");
+        }
+
+        if (nodo.dato < max) {
+            imprimirRangoOrdenadoRecursivo(nodo.derecho, min, max);
+        }
+    }
     private boolean esBSTValidoRecursivo(Nodo nodo, int minimo, int maximo) {
 
         if (nodo == null) {

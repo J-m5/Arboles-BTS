@@ -54,6 +54,12 @@ public class Principal {
         System.out.println("K-esimo menor k=1: " + arbol.kEsimoMenor(1));
         System.out.println("K-esimo menor k=3: " + arbol.kEsimoMenor(3));
         System.out.println("K-esimo menor k=5: " + arbol.kEsimoMenor(5));
+        
+        System.out.print("Rango ordenado [25,65]: ");
+        arbol.imprimirRangoOrdenado(25, 65);
+
+        System.out.print("Rango ordenado [10,40]: ");
+        arbol.imprimirRangoOrdenado(10, 40);
     
         System.out.println("\n--- Arbol original ---");
         arbol.imprimirArbol();
