@@ -266,6 +266,44 @@ public class ArbolBinarioBusqueda {
         invertirRecursivo(nodo.derecho);
     }
     
+    /**
+     * Devuelve el k-ésimo valor menor del BST.
+     * k inicia en 1.
+     */
+    public int kEsimoMenor(int k) {
+        if (k <= 0 || k > contarNodos()) {
+            throw new IllegalArgumentException("k fuera de rango");
+        }
+
+        Contador contador = new Contador();
+        Nodo resultado = kEsimoMenorRecursivo(raiz, k, contador);
+
+        return resultado.dato;
+    }
+
+    private Nodo kEsimoMenorRecursivo(Nodo nodo, int k, Contador contador) {
+        if (nodo == null) {
+            return null;
+        }
+
+        Nodo izquierdo = kEsimoMenorRecursivo(nodo.izquierdo, k, contador);
+
+        if (izquierdo != null) {
+            return izquierdo;
+        }
+
+        contador.valor++;
+
+        if (contador.valor == k) {
+            return nodo;
+        }
+
+        return kEsimoMenorRecursivo(nodo.derecho, k, contador);
+    }
+
+    private static class Contador {
+        int valor;
+    }
     private boolean esBSTValidoRecursivo(Nodo nodo, int minimo, int maximo) {
 
         if (nodo == null) {

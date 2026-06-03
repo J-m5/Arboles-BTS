@@ -51,6 +51,10 @@ public class Principal {
         System.out.println("LCA(10,80): " +
                 arbol.ancestroComunMasBajo(10,80));
         
+        System.out.println("K-esimo menor k=1: " + arbol.kEsimoMenor(1));
+        System.out.println("K-esimo menor k=3: " + arbol.kEsimoMenor(3));
+        System.out.println("K-esimo menor k=5: " + arbol.kEsimoMenor(5));
+    
         System.out.println("\n--- Arbol original ---");
         arbol.imprimirArbol();
 
