@@ -330,6 +330,37 @@ public class ArbolBinarioBusqueda {
             imprimirRangoOrdenadoRecursivo(nodo.derecho, min, max);
         }
     }
+    
+    /**
+     * Calcula el diámetro del árbol.
+     * El diámetro es la cantidad de aristas del camino más largo
+     * entre dos nodos del árbol.
+     */
+    public int diametro() {
+        return diametroRecursivo(raiz);
+    }
+
+    private int diametroRecursivo(Nodo nodo) {
+        if (nodo == null) {
+            return 0;
+        }
+
+        int alturaIzquierda = alturaRecursiva(nodo.izquierdo);
+        int alturaDerecha = alturaRecursiva(nodo.derecho);
+
+        int diametroPorRaiz = alturaIzquierda + alturaDerecha + 2;
+
+        int diametroIzquierdo = diametroRecursivo(nodo.izquierdo);
+        int diametroDerecho = diametroRecursivo(nodo.derecho);
+
+        int mayorSubarbol = diametroIzquierdo > diametroDerecho
+                ? diametroIzquierdo
+                : diametroDerecho;
+
+        return diametroPorRaiz > mayorSubarbol
+                ? diametroPorRaiz
+                : mayorSubarbol;
+    }
     private boolean esBSTValidoRecursivo(Nodo nodo, int minimo, int maximo) {
 
         if (nodo == null) {

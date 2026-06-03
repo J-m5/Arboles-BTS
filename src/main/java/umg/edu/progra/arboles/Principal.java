@@ -60,6 +60,8 @@ public class Principal {
 
         System.out.print("Rango ordenado [10,40]: ");
         arbol.imprimirRangoOrdenado(10, 40);
+        
+        System.out.println("Diametro: " + arbol.diametro());
     
         System.out.println("\n--- Arbol original ---");
         arbol.imprimirArbol();
